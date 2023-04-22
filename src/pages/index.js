@@ -40,7 +40,7 @@ export default function Home({currency, weather}) {
   let [to, setTo] = useState(()=> "INR");
   let [inputValue, setInputValue] = useState(()=> 0);
   let [outputValue, setOutputValue] = useState(()=> 0);
-  let [exchangeValue, setExchangeValue] = useState(()=>null);
+  let [exchangeValue, setExchangeValue] = useState(()=>"");
 
   
   let reqChangeRate = useCallback(async()=>{
@@ -111,7 +111,7 @@ export default function Home({currency, weather}) {
                 handleTo={handleTo}
               />
               {
-                  {exchangeValue} && 
+                  exchangeValue !== "" && 
                   <CurrencyResult 
                       inputValue={inputValue} 
                       outputValue={outputValue} 

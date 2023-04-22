@@ -12,8 +12,8 @@ let Weather = ({weather})=>{
     let [lattitude, setLattitude] = useState(()=>"19.0760");
     let [longitude, setLongitude] = useState(()=> "72.8777");
     let [city, setCity] = useState(()=> "India-Mumbai");
-    let [today, setToday] = useState(()=>null);
-    let [daily, setDaily] = useState(()=> null);
+    let [today, setToday] = useState(()=>"");
+    let [daily, setDaily] = useState(()=> "");
 
     let fetchWeather = useCallback(async()=>{
         let URL = `/api/weather/${lattitude}/${longitude}`;
@@ -40,7 +40,7 @@ let Weather = ({weather})=>{
                 <div className="col-sm-8 mx-auto mt-5">
                     <WeatherDropDown weather={weather} handleChange={handleChange}/>
                     {
-                        today && 
+                        today !== "" && 
                         <TodaysWeather 
                         place={city}
                         today={today}
@@ -48,7 +48,7 @@ let Weather = ({weather})=>{
                         
                     }
                     {
-                        daily &&
+                        daily !== "" &&
                         <WeeklyWeather 
                         place={city}
                         daily={daily}

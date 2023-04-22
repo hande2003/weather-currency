@@ -12,7 +12,7 @@ let Currency = ({currency})=>{
     let [to, setTo] = useState(()=> "INR");
     let [inputValue, setInputValue] = useState(()=> 0);
     let [outputValue, setOutputValue] = useState(()=> 0);
-    let [exchangeValue, setExchangeValue] = useState(()=>null);
+    let [exchangeValue, setExchangeValue] = useState(()=>"");
 
     
     let reqChangeRate = useCallback(async()=>{
@@ -56,7 +56,7 @@ let Currency = ({currency})=>{
                         handleTo={handleTo}
                     />
                     {
-                        {exchangeValue} && 
+                        exchangeValue !== "" && 
                         <CurrencyResult 
                             inputValue={inputValue} 
                             outputValue={outputValue} 
