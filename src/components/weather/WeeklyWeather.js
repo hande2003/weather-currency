@@ -21,7 +21,7 @@ export default function WeeklyWeather({ place, daily }) {
                   <div id="daily-info">
                       
                           <h2 className="fw-light">
-                            {`${new Date(daily.time[i]).toLocaleDateString(options=options)}`}
+                            {`${new Date(daily.time[i]).toLocaleDateString("en-IN", options)}`}
                           </h2>
 
                           <h4 className="d-flex gap-3">

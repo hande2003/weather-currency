@@ -12,7 +12,7 @@ export default async function handler(req, res){
         let maxTemp = `${response.data.daily.temperature_2m_max}`.split(",");
         let minTemp = `${response.data.daily.temperature_2m_min}`.split(",");
 
-        return res.json(
+        return res.status(200).json(
         
         {
             today:{

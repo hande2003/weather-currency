@@ -6,7 +6,7 @@ export default function TodaysWeather({ place, today }) {
   let location = place.split("-");
   let comment = parseInt(today.weathercode);
   const options = { weekday: 'long', month: 'long', day: 'numeric' };
-  let todayDate = new Date().toLocaleDateString(options= options);
+  let todayDate = new Date().toLocaleDateString("en-IN", options);
 
 console.log(today);
   return (
